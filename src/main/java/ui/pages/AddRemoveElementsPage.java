@@ -6,6 +6,6 @@ import org.openqa.selenium.support.FindBy;
 public interface AddRemoveElementsPage {
     @FindBy(name = "Add Element")
     By ADD_BTN = By.xpath("//button[@onclick=\"addElement()\"]");
-    @FindBy(name = "")
+    @FindBy(name = "deleteElement")
     By DELETE_BTN = By.xpath("//button[@onclick=\"deleteElement()\"]");
 }

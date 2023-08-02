@@ -26,4 +26,10 @@ public interface WebConfig extends Config {
     @DefaultValue("false")
     boolean logNetwork();
 
+    @Key("basic.login")
+    @DefaultValue("user")
+    String login();
+    @Key("basic.password")
+    @DefaultValue("admin")
+    String password();
 }
