@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c68e692-6e27-4538-9241-21a731dbb6fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/tests/BrokenImageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/tests/CheckboxesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/pages/AddRemoveElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pages/AddRemoveElementsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/tests/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/tests/FirstTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/util/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -73,23 +69,7 @@
       <command value="mvn allure:serve" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BrokenImageTest.test">
-    <configuration name="AbTest.abTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExamplesAuto" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ui.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="ui.tests.AbTest" />
-      <option name="METHOD_NAME" value="abTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CheckboxesTest.test">
     <configuration name="AddRemoveElementsTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExamplesAuto" />
       <extension name="coverage">
@@ -154,20 +134,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CheckboxesTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExamplesAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ui.tests" />
+      <option name="MAIN_CLASS_NAME" value="ui.tests.CheckboxesTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.BrokenImageTest.test" />
       <item itemvalue="JUnit.BrokenImageTest.test_selenium_broken_images_appr_1" />
-      <item itemvalue="JUnit.AbTest.abTest" />
+      <item itemvalue="JUnit.CheckboxesTest.test" />
       <item itemvalue="JUnit.AddRemoveElementsTest.addTest" />
       <item itemvalue="JUnit.AddRemoveElementsTest.deleteTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CheckboxesTest.test" />
         <item itemvalue="JUnit.BrokenImageTest.test" />
         <item itemvalue="JUnit.BrokenImageTest.test_selenium_broken_images_appr_1" />
         <item itemvalue="JUnit.AddRemoveElementsTest.deleteTest" />
         <item itemvalue="JUnit.AddRemoveElementsTest.addTest" />
-        <item itemvalue="JUnit.AbTest.abTest" />
       </list>
     </recent_temporary>
   </component>
