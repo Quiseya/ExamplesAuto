@@ -21,4 +21,5 @@ public class ContextMenuTest extends ContextMenuSteps {
         contextMenuSteps.click(By.xpath("//div[@id=\"hot-spot\"]"));
         getDriver().switchTo().alert().accept();
     }
+
 }
