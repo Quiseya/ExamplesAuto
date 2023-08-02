@@ -1,7 +1,7 @@
-package web.tests;
+package ui.tests;
 
-import web.util.ElementUtil;
-import web.util.MainUtil;
+import ui.util.ElementUtil;
+import ui.util.MainUtil;
 
 public class FirstTest extends MainUtil {
     @org.junit.jupiter.api.Test

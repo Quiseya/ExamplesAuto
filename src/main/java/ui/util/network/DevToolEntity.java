@@ -1,4 +1,4 @@
-package web.util.network;
+package ui.util.network;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

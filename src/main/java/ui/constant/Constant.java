@@ -1,4 +1,4 @@
-package web.constant;
+package ui.constant;
 
 public interface Constant {
     String CONSOLE_ERRORS_500 = "[5][0-9][0-9]";

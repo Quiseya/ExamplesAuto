@@ -1,4 +1,4 @@
-package web.util.network;
+package ui.util.network;
 
 import lombok.Data;
 import org.openqa.selenium.devtools.DevTools;

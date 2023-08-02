@@ -1,12 +1,12 @@
-package web.tests;
+package ui.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import web.constant.Constant;
-import web.pages.MainPage;
-import web.util.ElementUtil;
-import web.util.MainUtil;
-
+import ui.constant.Constant;
+import ui.pages.MainPage;
+import ui.util.ElementUtil;
+import ui.util.MainUtil;
+//http://the-internet.herokuapp.com/
 
 public class AbTest extends MainUtil implements MainPage {
 

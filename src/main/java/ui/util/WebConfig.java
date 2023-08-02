@@ -1,4 +1,4 @@
-package web.util;
+package ui.util;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;

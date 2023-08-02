@@ -1,9 +1,9 @@
-package web.util;
+package ui.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import web.util.network.NetworkEntity;
-import web.util.network.NetworkHelper;
+import ui.util.network.NetworkEntity;
+import ui.util.network.NetworkHelper;
 
 @Data
 @AllArgsConstructor

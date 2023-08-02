@@ -1,11 +1,11 @@
-package web.util.network;
+package ui.util.network;
 
 import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v108.network.Network;
-import web.util.MainUtil;
+import ui.util.MainUtil;
 
 
 import java.util.ArrayList;

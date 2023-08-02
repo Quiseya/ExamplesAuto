@@ -1,4 +1,4 @@
-package web.util;
+package ui.util;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevToolsException;
 import org.openqa.selenium.remote.http.ConnectionFailedException;
-import web.constant.Constant;
-import web.util.network.NetworkHelper;
+import ui.constant.Constant;
+import ui.util.network.NetworkHelper;
 
 import java.nio.file.Paths;
 import java.time.Duration;
@@ -19,13 +19,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.aspectj.bridge.MessageUtil.fail;
-import static web.util.WebConfig.BASE_CONFIG;
+import static ui.util.WebConfig.BASE_CONFIG;
 
 public class MainUtil {
 
     private static WebDriver driver;
 
-    private static web.util.Logger logger;
+    private static ui.util.Logger logger;
 
     public MainUtil() {
         starter();
@@ -109,10 +109,10 @@ public class MainUtil {
         }
     }
 
-    private static web.util.Logger starterLog() {
+    private static ui.util.Logger starterLog() {
         var network = new NetworkHelper();
         var entity = network.starter();
-        return new web.util.Logger(network, entity);
+        return new ui.util.Logger(network, entity);
     }
 
 }

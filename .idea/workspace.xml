@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c68e692-6e27-4538-9241-21a731dbb6fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/tests/AbTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/pages/AddRemoveElementsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/steps/AddRemoveElementsSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/tests/AddRemoveElementsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/tests/FirstTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/ElementUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/util/ElementUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/tests/AbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/tests/AbTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/tests/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/tests/FirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/ElementUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/ElementUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/MainUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/MainUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/network/DevToolEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/network/DevToolEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/network/NetworkEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/network/NetworkEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/network/NetworkHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/util/network/NetworkHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,18 +81,50 @@
       <command value="mvn allure:serve" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AbTest.abTest">
+  <component name="RunManager" selected="JUnit.AddRemoveElementsTest.deleteTest">
     <configuration name="AbTest.abTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExamplesAuto" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="web.tests.*" />
+          <option name="PATTERN" value="ui.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.AbTest" />
+      <option name="MAIN_CLASS_NAME" value="ui.tests.AbTest" />
       <option name="METHOD_NAME" value="abTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddRemoveElementsTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExamplesAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ui.tests" />
+      <option name="MAIN_CLASS_NAME" value="ui.tests.AddRemoveElementsTest" />
+      <option name="METHOD_NAME" value="addTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddRemoveElementsTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExamplesAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ui.tests" />
+      <option name="MAIN_CLASS_NAME" value="ui.tests.AddRemoveElementsTest" />
+      <option name="METHOD_NAME" value="deleteTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,7 +134,7 @@
       <module name="ExamplesAuto" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="web.util.*" />
+          <option name="PATTERN" value="ui.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,30 +146,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExamplesAuto" />
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.FirstTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FirstTest.testUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExamplesAuto" />
       <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.FirstTest" />
-      <option name="METHOD_NAME" value="testUrl" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -Denv=dev" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirstTest.testUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExamplesAuto" />
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="ui.tests.FirstTest" />
       <option name="METHOD_NAME" value="testUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -137,18 +158,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.AbTest.abTest" />
+      <item itemvalue="JUnit.AddRemoveElementsTest.addTest" />
+      <item itemvalue="JUnit.AddRemoveElementsTest.deleteTest" />
       <item itemvalue="JUnit.BlaBlaTest.test" />
-      <item itemvalue="JUnit.FirstTest" />
       <item itemvalue="JUnit.FirstTest.testUrl (1)" />
-      <item itemvalue="JUnit.FirstTest.testUrl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddRemoveElementsTest.deleteTest" />
+        <item itemvalue="JUnit.AddRemoveElementsTest.addTest" />
         <item itemvalue="JUnit.AbTest.abTest" />
         <item itemvalue="JUnit.FirstTest.testUrl (1)" />
         <item itemvalue="JUnit.BlaBlaTest.test" />
-        <item itemvalue="JUnit.FirstTest" />
-        <item itemvalue="JUnit.FirstTest.testUrl" />
       </list>
     </recent_temporary>
   </component>
@@ -178,19 +199,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/web/util/MainUtil.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/web/util/MainUtil.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/ui/util/MainUtil.java</url>
           <line>45</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/web/tests/AbTest.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/main/java/ui/steps/AddRemoveElementsSteps.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

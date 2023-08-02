@@ -1,4 +1,4 @@
-package web.util;
+package ui.util;
 
 import io.netty.channel.ConnectTimeoutException;
 import io.qameta.allure.Attachment;
@@ -9,6 +9,7 @@ import io.restassured.config.RestAssuredConfig;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.List;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.fail;
-import static web.util.WebConfig.BASE_CONFIG;
+import static ui.util.WebConfig.BASE_CONFIG;
 
 public class ElementUtil extends MainUtil {
 
@@ -185,6 +186,74 @@ public class ElementUtil extends MainUtil {
         if (!currentUrl.equalsIgnoreCase(url)){
             fail("фактический: "+currentUrl + " не равен ожидаемому: "+ url);
         }
+    }
+    @Step("Проверить что по xpath {0}, ожидаемое значение {1}")
+    public static void contains(String xpath, String expected) {
+        try {
+            var value = getDriver().findElement(By.xpath(xpath)).getText();
+            if (!expected.contains(value)) {
+                saveScreenshot();
+                fail("Ошибка, ожидаемый результат = " + expected + " не равен фактическому " + value);
+            }
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент xpath = " + xpath + " не найден на странице");
+        } catch (ElementNotInteractableException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
+    @Step("Переход в новое окно под номером {0}")
+    public static void switchToWindow(int numberWindow) {
+        var windows = getDriver().getWindowHandles();
+        getDriver().switchTo().window(windows.stream().toList().get(numberWindow));
+    }
+    @Step("Количество элементов равно {1}")
+    public static void searchCount(By className, int x) {
+        scrollToDown();
+        int count = getDriver().findElements(className).size();
+        if (count < x - 20) {
+            scrollToDown();
+            var newCount = getDriver().findElements(className).size();
+            if (newCount == 10) {
+                saveScreenshot();
+                fail("Фактическое количество элементов " + count + " не соответствует заявленному " + x);
+            } else {
+                System.out.println("Фактическое количество элементов " + count + " не соответствует заявленному " + x + " так как недостаточно элементов на странице");
+            }
+        }
+        if (count == x) {
+            System.out.println("Фактическое количество элементов " + count + " соответствует заявленному " + x);
+
+        }
+    }
+
+    @Step("Скролл к элементу {0}")
+    public static void scrollTo(By xpath) {
+        try {
+            var element = getDriver().findElement(xpath);
+            try {
+                new Actions(getDriver())
+                        .scrollToElement(element)
+                        .perform();
+            } catch (MoveTargetOutOfBoundsException e) {
+                System.out.println("Скрол работает");
+            }
+        } catch (NoSuchElementException e) {
+            fail("" + e.getMessage());
+        }
+    }
+
+    @Step("Скрол вниз страницы")
+    public static void scrollToDown() {
+        ((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    @Step("Скрол верх страницы")
+    public static void scrollToUP() {
+        ((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, document.body.scrollDown)");
     }
 }
 
