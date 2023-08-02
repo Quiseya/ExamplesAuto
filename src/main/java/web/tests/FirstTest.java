@@ -1,3 +1,5 @@
+package web.tests;
+
 import web.util.ElementUtil;
 import web.util.MainUtil;
 

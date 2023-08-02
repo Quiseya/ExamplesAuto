@@ -8,11 +8,13 @@ import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RestAssuredConfig;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.fail;
 import static web.util.WebConfig.BASE_CONFIG;
@@ -85,7 +87,105 @@ public class ElementUtil extends MainUtil {
         }
     }
 
+    @Step("Нажать на элемент {0}")
+    public static void click(By xpath) {
+        try {
+            getDriver().findElement(xpath).click();
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
 
+    @Step("Переключиться на всплывающее окно")
+    private static void switchToAlert(UnhandledAlertException e) {
+        getDriver().switchTo().alert();
+        saveScreenshot();
+        fail("Ошибка. Непредвиденное Аллерт окно = " + e.getAlertText());
+    }
+
+    @Step("Наведение курсора на элемент по xpath {0}")
+    public static void moveToElement(By xpath) {
+        try {
+            Actions builder = new Actions(getDriver());
+            builder.moveToElement(getDriver().findElement(xpath)).perform();
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент xpath = " + xpath + " не найден на странице");
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
+    @Step("Проверить что по xpath {0}, ожидаемое значение {1}")
+    public static void equals(By xpath, String expected) {
+        try {
+            var value = getDriver().findElement(xpath).getText();
+            if (!expected.equalsIgnoreCase(value)) {
+                saveScreenshot();
+                fail("Ошибка, ожидаемый результат = " + expected + " не равен фактическому " + value);
+            }
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент xpath = " + xpath + " не найден на странице");
+        } catch (ElementNotInteractableException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
+    @Step("Удаление текста по xpath {0}")
+    public static void clearText(By xpath) {
+        try {
+            getDriver().findElement(xpath).clear();
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент xpath = " + xpath + " не найден на странице");
+        } catch (ElementNotInteractableException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
+    @Step("Ввести текст по xpath {0} со значением {1}")
+    public static void sendKeys(By xpath, String value) {
+        try {
+            getDriver().findElement(xpath).sendKeys(value);
+        } catch (NoSuchElementException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент xpath = " + xpath + " не найден на странице со значением " + value);
+        } catch (ElementNotInteractableException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+        }
+    }
+    @Step("Получить текст по xpath {0}")
+    public static String getText(By xpath) {
+        try {
+            return getDriver().findElement(xpath).getText();
+        } catch (NoSuchElementException e) {
+            return "";
+        } catch (ElementNotInteractableException e) {
+            saveScreenshot();
+            fail("Ошибка, элемент присутствует в HTML DOM, он не находится в состоянии, с которым можно взаимодействовать: элемент = " + xpath);
+            return "";
+        } catch (UnhandledAlertException e) {
+            switchToAlert(e);
+            return "";
+        }
+    }
+    @Step("Сравнить адреса страниц")
+    public static void checkUrls(String url){
+        var currentUrl = getDriver().getCurrentUrl();
+        if (!currentUrl.equalsIgnoreCase(url)){
+            fail("фактический: "+currentUrl + " не равен ожидаемому: "+ url);
+        }
+    }
 }
 
 
