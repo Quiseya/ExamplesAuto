@@ -255,6 +255,8 @@ public class ElementUtil extends MainUtil {
     public static void scrollToUP() {
         ((JavascriptExecutor) getDriver()).executeScript("window.scrollTo(0, document.body.scrollDown)");
     }
+
+
 }
 
 
